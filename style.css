@@ -1,0 +1,111 @@
+/* ==========================================================================
+   ProFolio - Shared Custom Styles & Animations (Final)
+   ========================================================================== */
+
+body { 
+    font-family: 'Inter', sans-serif; 
+    overflow-x: hidden; 
+}
+
+/* --- 1. Developer Background Pattern --- */
+.bg-grid-pattern {
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+}
+.dark .bg-grid-pattern {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+/* --- 2. Dentist Background Pattern --- */
+.bg-dental-pattern {
+    background-color: #f8fafc;
+    background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+.dark .bg-dental-pattern {
+    background-color: #0b1121;
+    background-image: radial-gradient(#1e293b 1px, transparent 1px);
+}
+
+/* --- 3. Video Editor Background Pattern --- */
+.bg-editor-pattern {
+    background-color: #09090b;
+    background-image: linear-gradient(to right, rgba(168, 85, 247, 0.02) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(168, 85, 247, 0.02) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
+/* --- Animations --- */
+
+/* Floating Blobs (Universal) */
+@keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+}
+.animate-blob { animation: blob 7s infinite; }
+
+/* Floating Stickers (Universal) */
+@keyframes float-sticker {
+    0%, 100% { transform: translateY(0) rotate(var(--tw-rotate)); }
+    50% { transform: translateY(-15px) rotate(var(--tw-rotate)); }
+}
+.animate-float-sticker { animation: float-sticker 6s ease-in-out infinite; }
+
+/* Floating Medical Crosses (Dentist) */
+@keyframes float-up {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+    50% { opacity: 0.5; }
+    100% { transform: translateY(-100px) rotate(45deg); opacity: 0; }
+}
+.animate-float-up { animation: float-up 8s infinite linear; }
+
+/* Infinite Marquee Scroll (Universal) */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+.animate-scroll { animation: scroll 20s linear infinite; }
+.animate-scroll:hover { animation-play-state: paused; }
+
+/* Pulse REC Animation (Video Editor) */
+@keyframes pulse-rec {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+.animate-rec { animation: pulse-rec 1.5s infinite; }
+
+/* Sound Wave Animation (Video Editor) */
+@keyframes wave {
+    0%, 100% { height: 4px; }
+    50% { height: 24px; }
+}
+.wave-bar { animation: wave 1.2s ease-in-out infinite; }
+.wave-delay-1 { animation-delay: 0.2s; }
+.wave-delay-2 { animation-delay: 0.4s; }
+.wave-delay-3 { animation-delay: 0.6s; }
+
+/* --- Delays --- */
+.delay-1000 { animation-delay: 1s; }
+.delay-2000 { animation-delay: 2s; }
+.delay-3000 { animation-delay: 3s; }
+
+/* --- 4. Photographer Background Pattern --- */
+.bg-grain {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+/* --- 5. Fitness Theme Styles --- */
+.theme-fitness h1, 
+.theme-fitness h2, 
+.theme-fitness h3, 
+.font-heading { 
+    font-family: 'Oswald', sans-serif; 
+    text-transform: uppercase; 
+}
+.skew-bg {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
